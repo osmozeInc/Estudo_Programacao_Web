@@ -1,7 +1,3 @@
-
-
-
-
 /* DECLARAÇÃO LABEL
 
 Um label provê um identificador que permite que este seja referenciado em outro lugar no seu programa. Por exemplo, você pode usar uma label para identificar um laço, e então usar break ou continue para indicar quando o programa deverá interromper o laço ou continuar sua execução.
@@ -26,13 +22,33 @@ if (true)
         }
         console.log(num)
     }
-    console.log("Loop terminou")
+    console.log("Loop terminou\n================================")
 }
-  
 
 
 
+/* FOR...IN */
+
+var carro = {
+    marca: "ford",
+    modelo: "mustang",
+    ano: 1969,
+}
+
+for (let i in carro){
+    console.log(carro[i]);
+}
 
 
 
+/* FOR...OF */
 
+carro = ["Ford", "Mustang", "1969"];
+
+    for (let i in carro){
+        console.log(i + ":");
+    }   
+
+    for (let i of carro){
+        console.log(i);
+    }
