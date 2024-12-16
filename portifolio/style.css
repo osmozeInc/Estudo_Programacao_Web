@@ -1,8 +1,10 @@
 body{
-    color: white;
     overflow-x: hidden;
 }
 
+.home-page{
+    display: block;
+}
 
 .home-bar{
     background-color: #e0e0e0;
@@ -86,8 +88,6 @@ body{
     margin-bottom: -20px;
 }
 
-
-
 .home-bar-circle-profile{
     width: 50px;
     height: 50px;
@@ -97,6 +97,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 #checkbox-contact{
     display: none;
 }
@@ -122,17 +123,17 @@ body{
     margin-left: 10px;
     margin-right: 20px;
 }
-/*
-
-.home-bar-contact-instagram{
-
-}
-*/
-
-
 
 .home-bar-icon{
     color: #e0e0e0;
     position: absolute;
     opacity: 0;
+}
+
+.home-layout-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    background-color: #000033;
 }
