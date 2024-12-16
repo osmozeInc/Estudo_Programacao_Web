@@ -1,5 +1,9 @@
-.body{
+html, body{
     position: fixed;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    touch-action: none;
 }
 
 .home-page{
@@ -135,4 +139,14 @@
     width: 100%;
     height: 400px;
     background-color: #000033;
+}
+
+.home-layout-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #e0e0e0;
+    font-size: 100px;
 }
