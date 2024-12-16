@@ -13,7 +13,8 @@
 <script src="./portifolio/my.js" type="module"></script>
 
 <!-- HTML -->
-<body style="background-color: #111; overflow-x: hidden; display: block;">
+<body style="background-color: #111;">
+
 
     <div class="home-bar"> <!-- barra de navegação -->
 
@@ -25,15 +26,14 @@
                     <div id="bar-3" class="home-bar-bars"></div>
                 </label>
             </input>
-                <a id="option-1" class="home-bar-bars-options" href="#linguagens">Linguagens</a>
-                <a id="option-2" class="home-bar-bars-options" href="#portifolio">Portifólio</a>
-                <a id="option-3" class="home-bar-bars-options" href="#formacao">Formação</a>
+                <a id="option-1" class="home-bar-bars-options" href="#">Início</a>
+                <a id="option-2" class="home-bar-bars-options" href="#">Sobre mim</a>
+                <a id="option-3" class="home-bar-bars-options" href="#">Portifólio</a>
         </div>
 
-        <div class="col home-bar-middle-center">
-
+        <div class="home-bar-middle-side">
+            <p id="title-page" class="home-bar-title-page">Início<br><br>Sobre mim<br><br>Portifólio</p>
         </div>
-
         
         <div class="col home-bar-right-side"> <!-- barra de contatos -->
 
@@ -62,17 +62,30 @@
                 </label>
             </input>
         </div>
+
     </div>    
 
-<div class="home-page">
 
 
-    <br><br><br><br><br><br><br>
-    <div class="home-layout-container">
-        <div class="home-layout-title">
-            Caio Monte
+<div id="home-page" class="home-page">
+
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <div class="col home-layout-container d-md-flex d-none">
+        
+        <div class="home-layout-container-text">
+            <p class="text-1">Hello Wolrd!</p>
+            <p class="text-2">Caio Monte</p>
+            <p class="text-3">fullstack developer</p>
+            <p class="text-4">Bem vindo meu site pessoal!</p>
+         </div>
+
+        <div class="home-layout-container-image col">
+            <img src="https://i.pinimg.com/originals/34/bf/c4/34bfc4334bc193bd2538e594703fd1f7.jpg" class="home-layout-image">
         </div>
         
+    
+            
     </div>
     
     
@@ -81,6 +94,13 @@
     
 </div>
 
+<div id="about-page" class="about-page">
+    hahaha
+</div>
+
+<div id="portfolio-page" class="portfolio-page">
+    hehehe
+</div>
 
 
 </body>

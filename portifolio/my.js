@@ -1,8 +1,13 @@
 /* BARRA DE OPÇÕES */
 
-// animação das opções na barra de opções
 const checkbox_bars = document.getElementById('checkbox-bars');
+const home_page = document.getElementById('home-page');
+const about_page = document.getElementById('about-page');
+const portfolio_page = document.getElementById('portfolio-page');
+const title_page = document.getElementById('title-page');
 
+
+// animação das opções na barra de opções
 checkbox_bars.addEventListener('change', function() {
     for (let i = 1; i < 4; i++)
     {    
@@ -10,7 +15,7 @@ checkbox_bars.addEventListener('change', function() {
         if (checkbox_bars.checked) 
         {
             setTimeout(function(){
-                option.style.transform = `translate(-110px, ${80 * i}px)`;
+                option.style.transform = `translate(-110px, ${65 * i}px)`;
                 option.style.transitionDuration = `1s`;
                 option.style.opacity = `1`;
             }, i * 80);
@@ -26,26 +31,47 @@ checkbox_bars.addEventListener('change', function() {
 });
 
 
-document.getElementById('option-1').addEventListener('click', function() 
+document.getElementById('option-1').addEventListener('click', function()
 {
     const event = new Event('change');
     checkbox_bars.checked = false;
     checkbox_bars.dispatchEvent(event);
+    
+    home_page.style.display = 'block';
+    about_page.style.display = 'none';
+    portfolio_page.style.display = 'none';
+
+    title_page.style.transform = `translateY(0px)`;
+    title_page.style.transitionDuration = `1s`;
 });
 
-document.getElementById('option-2').addEventListener('click', function() 
+document.getElementById('option-2').addEventListener('click', function()
 {
     const event = new Event('change');
     checkbox_bars.checked = false;
     checkbox_bars.dispatchEvent(event);
+
+    home_page.style.display = 'none';
+    about_page.style.display = 'block';
+    portfolio_page.style.display = 'none';
+
+    title_page.style.transform = `translateY(-65px)`;
+    title_page.style.transitionDuration = `1s`;
 });
 
 
-document.getElementById('option-3').addEventListener('click', function() 
+document.getElementById('option-3').addEventListener('click', function()
 {
     const event = new Event('change');
     checkbox_bars.checked = false;
     checkbox_bars.dispatchEvent(event);
+
+    home_page.style.display = 'none';
+    about_page.style.display = 'none';
+    portfolio_page.style.display = 'block';
+
+    title_page.style.transform = `translateY(-130px)`;
+    title_page.style.transitionDuration = `1s`;
 });
 
 
