@@ -162,6 +162,7 @@ const text_to_change = document.querySelectorAll(`.text-3`);
 function change_text()
 {
     index++;
+    if (index > 3) index = 0;
     let texts = ["Dev. Full-Stack", "Desenvolvedor Web", "Programador Python", "Programador C#"];
 
     text_to_change.forEach(element =>
@@ -175,7 +176,6 @@ function change_text()
         function reset(){
             element.classList.remove(`text-3-animation-${index}`);
             element.innerHTML = "<br>";
-            if (index >= 3) index = 0;
         }
         
         writing();
