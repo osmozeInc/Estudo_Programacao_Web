@@ -123,13 +123,6 @@ function blink_contact()
     if (icon > 2) icon = 1;
 }
 
-// posiciona os elementos em colunas
-for (let i = 1; i < 4; i++)
-{
-    const contact = document.getElementById(`contact-${i}`);
-    contact.style.marginTop = `${160 * i}px`;
-}
-
 // animação da entrada dos contatos
 checkbox_contact.addEventListener('change', function() {
     if (checkbox_contact.checked)
