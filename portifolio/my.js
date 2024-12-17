@@ -133,7 +133,7 @@ checkbox_contact.addEventListener('change', function() {
             setTimeout(function() {
                 const contact = document.getElementById(`contact-${i}`);
                 contact.style.transitionDuration = `1s`;
-                contact.style.transform = `translateX(-220px)`;
+                contact.style.transform = `translateX(-205px)`;
             }, i * 100);
         }
     }
@@ -182,8 +182,6 @@ function change_text()
         setTimeout(reset, 9000);
     })
 }
-
-
 
 
 
