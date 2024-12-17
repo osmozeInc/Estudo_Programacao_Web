@@ -216,8 +216,8 @@ html, body{
 
 .home-layout-container-image-vertical{
     display: flex;
-    max-width: 300px;
-    max-height: 300px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     aspect-ratio: 1;
     background-color: #ffffff;
@@ -272,5 +272,5 @@ html, body{
     object-fit: cover;
     width: 290px;
     height: 290px;
-    overflow: hidden;
+overflow: hidden;
 }
