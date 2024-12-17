@@ -1,11 +1,20 @@
-/* BARRA DE OPÇÕES */
 
 const checkbox_bars = document.getElementById('checkbox-bars');
 const home_page = document.getElementById('home-page');
 const about_page = document.getElementById('about-page');
 const portfolio_page = document.getElementById('portfolio-page');
 const title_page = document.getElementById('title-page');
+const checkbox_contact = document.getElementById('checkbox-contact');
+const icon_not_animation = document.getElementById(`icon-not-animated`);
+let icon = 1;
+let index = -1;
 
+
+
+
+
+
+/* BARRA DE OPÇÕES */
 
 // animação das opções na barra de opções
 checkbox_bars.addEventListener('change', function() {
@@ -30,7 +39,7 @@ checkbox_bars.addEventListener('change', function() {
     } 
 });
 
-
+// seleção das páginas pelas opções
 document.getElementById('option-1').addEventListener('click', function()
 {
     const event = new Event('change');
@@ -55,10 +64,9 @@ document.getElementById('option-2').addEventListener('click', function()
     about_page.style.display = 'block';
     portfolio_page.style.display = 'none';
 
-    title_page.style.transform = `translateY(-65px)`;
+    title_page.style.transform = `translateY(-45px)`;
     title_page.style.transitionDuration = `1s`;
 });
-
 
 document.getElementById('option-3').addEventListener('click', function()
 {
@@ -70,23 +78,33 @@ document.getElementById('option-3').addEventListener('click', function()
     about_page.style.display = 'none';
     portfolio_page.style.display = 'block';
 
-    title_page.style.transform = `translateY(-130px)`;
+    title_page.style.transform = `translateY(-90px)`;
     title_page.style.transitionDuration = `1s`;
 });
 
+// seleção das páginas pelos links
+document.querySelectorAll('.portifolio-link').forEach(link => {
+    link.addEventListener('click', function() {
+        const event = new Event('change');
+        checkbox_bars.checked = false;
+        checkbox_bars.dispatchEvent(event);
+
+        home_page.style.display = 'none';
+        about_page.style.display = 'none';
+        portfolio_page.style.display = 'block';
+
+        title_page.style.transform = `translateY(-90px)`;
+        title_page.style.transitionDuration = `1s`;
+    });
+});
 
 
 
 
 /* ICONE DE CONTATOS */
 
-const checkbox_contact = document.getElementById('checkbox-contact');
-const icon_not_animation = document.getElementById(`icon-not-animated`);
-var icon = 1;
-
-
 // animação da aparição dos icones dos contatos no botão
-function aaaa() 
+function blink_contact() 
 {
     if (!checkbox_contact.checked)
     {
@@ -141,5 +159,44 @@ checkbox_contact.addEventListener('change', function() {
 
 
 
-aaaa();
-setInterval(aaaa, 3000);
+
+
+/* Animações CSS */
+
+// animação de digitação do .texto-3
+const text_to_change = document.querySelectorAll(`.text-3`);
+
+function change_text()
+{
+    index++;
+    let texts = ["Dev. Full-Stack", "Desenvolvedor Web", "Programador Python", "Programador C#"];
+
+    text_to_change.forEach(element =>
+    {
+        function writing(){
+            element.innerHTML = texts[index];
+            element.classList.add(`text-3-animation-${index}`);	
+        };
+
+
+        function reset(){
+            element.classList.remove(`text-3-animation-${index}`);
+            element.innerHTML = "<br>";
+            if (index >= 3) index = 0;
+        }
+        
+        writing();
+        setTimeout(reset, 9000);
+    })
+}
+
+
+
+
+
+
+blink_contact();
+setInterval(blink_contact, 3000);
+
+change_text();
+setInterval(change_text, 10000);
