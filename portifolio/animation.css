@@ -55,7 +55,7 @@ animation: name duration timing-function delay iteration-count direction fill-mo
         width: 0%;
     }
     to{
-        width: 75%;
+        width: 77%;
     }
 }
 
@@ -67,7 +67,7 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 
 @keyframes delete-1{
     from{
-        width: 75%;
+        width: 77%;
     }
     to{
         width: 0%;

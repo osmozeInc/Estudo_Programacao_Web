@@ -13,7 +13,6 @@ let index = -1;
 
 
 
-
 /* BARRA DE OPÇÕES */
 
 // animação das opções na barra de opções
@@ -149,7 +148,6 @@ checkbox_contact.addEventListener('change', function() {
         icon_not_animation.style.opacity = `0`;
     }
 });
-
 
 
 
