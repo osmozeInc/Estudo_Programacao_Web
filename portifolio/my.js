@@ -1,8 +1,8 @@
 
 const checkbox_bars = document.getElementById('checkbox-bars');
 const home_page = document.getElementById('home-page');
-const about_page = document.getElementById('about-page');
-const portfolio_page = document.getElementById('portfolio-page');
+const port_page = document.getElementById('port-page');
+const talk_page = document.getElementById('talk-page');
 const title_page = document.getElementById('title-page');
 const checkbox_contact = document.getElementById('checkbox-contact');
 const icon_not_animation = document.getElementById(`icon-not-animated`);
@@ -46,8 +46,8 @@ document.getElementById('option-1').addEventListener('click', function()
     checkbox_bars.dispatchEvent(event);
     
     home_page.style.display = 'block';
-    about_page.style.display = 'none';
-    portfolio_page.style.display = 'none';
+    port_page.style.display = 'none';
+    talk_page.style.display = 'none';
 
     title_page.style.transform = `translateY(0px)`;
     title_page.style.transitionDuration = `1s`;
@@ -60,8 +60,8 @@ document.getElementById('option-2').addEventListener('click', function()
     checkbox_bars.dispatchEvent(event);
 
     home_page.style.display = 'none';
-    about_page.style.display = 'block';
-    portfolio_page.style.display = 'none';
+    port_page.style.display = 'block';
+    talk_page.style.display = 'none';
 
     title_page.style.transform = `translateY(-45px)`;
     title_page.style.transitionDuration = `1s`;
@@ -74,8 +74,8 @@ document.getElementById('option-3').addEventListener('click', function()
     checkbox_bars.dispatchEvent(event);
 
     home_page.style.display = 'none';
-    about_page.style.display = 'none';
-    portfolio_page.style.display = 'block';
+    port_page.style.display = 'none';
+    talk_page.style.display = 'block';
 
     title_page.style.transform = `translateY(-90px)`;
     title_page.style.transitionDuration = `1s`;
@@ -89,8 +89,8 @@ document.querySelectorAll('.portifolio-link').forEach(link => {
         checkbox_bars.dispatchEvent(event);
 
         home_page.style.display = 'none';
-        about_page.style.display = 'none';
-        portfolio_page.style.display = 'block';
+        port_page.style.display = 'none';
+        talk_page.style.display = 'block';
 
         title_page.style.transform = `translateY(-90px)`;
         title_page.style.transitionDuration = `1s`;
@@ -119,7 +119,7 @@ function blink_contact()
     }
 
     icon++;
-    if (icon > 2) icon = 1;
+    if (icon == 5) icon = 1;
 }
 
 // animação da entrada dos contatos
@@ -127,7 +127,7 @@ checkbox_contact.addEventListener('change', function() {
     if (checkbox_contact.checked)
     {
         
-        for (let i = 1; i < 4; i++) 
+        for (let i = 1; i < 5; i++) 
         {
             setTimeout(function() {
                 const contact = document.getElementById(`contact-${i}`);
@@ -138,7 +138,7 @@ checkbox_contact.addEventListener('change', function() {
     }
     else
     {
-        for (let i = 1; i < 4; i++)
+        for (let i = 1; i < 5; i++)
         {
             setTimeout(function() {
                 const contact = document.getElementById(`contact-${i}`);

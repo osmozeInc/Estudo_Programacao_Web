@@ -6,11 +6,10 @@
     <title>Document</title>
 </head>
 
-<!-- JavaScript -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-<script src="./portifolio/my.js" type="module"></script>
+<div> <!-- imports JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./portifolio/my.js" type="module"></script>
+</div>
 
 <!-- HTML -->
 <body style="background-color: #111;">
@@ -28,12 +27,12 @@
                 </label>
             </input>
             <a id="option-1" class="home-bar-bars-options" href="#">Início</a>
-            <a id="option-2" class="home-bar-bars-options" href="#">Sobre mim</a>
-            <a id="option-3" class="home-bar-bars-options" href="#">Portifólio</a>
+            <a id="option-2" class="home-bar-bars-options" href="#">Portifólio</a>
+            <a id="option-3" class="home-bar-bars-options" href="#">Vamos Conversar</a>
         </div>
         
         <div class="home-bar-middle-side"> <!-- titulo da pagina-->
-            <p id="title-page" class="home-bar-title-page">Início<br>Sobre mim<br>Portifólio</p>
+            <p id="title-page" class="home-bar-title-page">Início<br>Portifólio<br>Vamos Conversar</p>
         </div>
         
         <div class="col home-bar-right-side"> <!-- icone de contatos -->
@@ -44,6 +43,9 @@
 
                         <i id="animation-opacity-icon-1" class="fa-solid fa-code fa-xl home-bar-icon"></i>
                         <i id="animation-opacity-icon-2" class="fa-brands fa-instagram fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-3" class="fa-brands fa-linkedin-in fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-4" class="fa-regular fa-envelope fa-xl home-bar-icon"></i>
+                        
 
                         <i id="icon-not-animated" class="fa-solid fa-user fa-xl home-bar-icon"></i>
                     </div>
@@ -70,6 +72,10 @@
             dev-caiomonte
             <i class="fa-brands fa-linkedin fa-xl contact-content"></i>
         </a>
+        <a id="contact-4" class="home-bar-contacts" href="mailto:caiomm076@gmail.com" target="_blank">
+            E-mail
+            <i class="fa-solid fa-envelope fa-xl contact-content"></i>
+        </a>
     </div>
     </div>
 
@@ -88,7 +94,7 @@
             </div>
 
             <div class="home-layout-container-image col-5">
-                <img src="https://i.pinimg.com/originals/34/bf/c4/34bfc4334bc193bd2538e594703fd1f7.jpg" class="home-layout-image">
+                <img src="portifolio/imagens/MINHA FOTO.jpeg" class="home-layout-image">
             </div>
                 
         </div>
@@ -97,7 +103,7 @@
         <div class="home-layout-container-vertical d-md-none">
 
             <div class="home-layout-container-image-vertical">
-                <img src="https://i.pinimg.com/originals/34/bf/c4/34bfc4334bc193bd2538e594703fd1f7.jpg" class="home-layout-image-vertical">
+                <img src="portifolio/imagens/MINHA FOTO.jpeg" class="home-layout-image-vertical">
             </div>
 
             <div class="home-layout-container-text-vertical">
@@ -115,14 +121,29 @@
     </div>
 
 
-    <!-- sobre mim -->
-    <div id="about-page" class="about-page">
-        hahaha
+    <!-- portifolio -->
+    <div id="port-page" class="port-page">
+        
+        <div class="port-about-container">
+            <div class="port-about-card">
+                <div style="margin-top: -15px;"><p class="port-about-title">Sobre mim</p></div>
+                
+                <p class="port-about-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, atque nobis? Aliquam nihil vitae illo quidem! Quo, incidunt ex fuga impedit, nobis odio magni obcaecati iste, porro aliquam quibusdam ab.</p>
+            </div>
+
+            <div class="port-about-card">
+                <div style="margin-top: -15px;"><p class="port-about-title">Habilidades</p></div>
+                
+                <p class="port-about-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, atque nobis? Aliquam nihil vitae illo quidem! Quo, incidunt ex fuga impedit, nobis odio magni obcaecati iste, porro aliquam quibusdam ab.</p>
+            </div>
+
+        </div>
+
     </div>
 
 
-    <!-- portifolio -->
-    <div id="portfolio-page" class="portfolio-page">
+    <!-- vamos conversar -->
+    <div id="talk-page" class="talk-page">
         hehehe
     </div>
 
