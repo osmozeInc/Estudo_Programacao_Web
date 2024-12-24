@@ -7,12 +7,6 @@ html, body{
     display: block;
 }
 
-.port-page{
-    display: none;
-    width: 100%;
-    height: 100%;
-}
-
 .talk-page{
     display: none;
 }
@@ -281,6 +275,12 @@ html, body{
 
 /* ABOUT PAGE */
 
+.port-page{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
 .port-about-container{
     display: flex;
     align-items: center;
@@ -314,7 +314,31 @@ html, body{
             color: #e0e0e0;
             margin-top: -10px;
             margin-left: 8%;
+            margin-right: 8%;
             font-size: large;
+        }
+    }
+}
+
+.port-projects-section-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    & .port-projects-cards-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        width: 80%;
+        background-color: #333;
+
+        & .port-project-card{
+            min-width: 300px;
+            min-height: 200px;
+            border-radius: 50px;
+            background-color: #e0e0e0;
         }
     }
 }
