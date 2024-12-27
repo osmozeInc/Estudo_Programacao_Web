@@ -4,13 +4,6 @@ const home_page = document.getElementById('home-page');
 const port_page = document.getElementById('port-page');
 const talk_page = document.getElementById('talk-page');
 const title_page = document.getElementById('title-page');
-const checkbox_contact = document.getElementById('checkbox-contact');
-const icon_not_animation = document.getElementById(`icon-not-animated`);
-let icon = 1;
-let index = -1;
-
-
-
 
 
 /* BARRA DE OPÇÕES */
@@ -100,6 +93,12 @@ document.querySelectorAll('.portifolio-link').forEach(link => {
 
 
 
+
+const checkbox_contact = document.getElementById('checkbox-contact');
+const icon_not_animation = document.getElementById(`icon-not-animated`);
+let icon = 1;
+
+
 /* ICONE DE CONTATOS */
 
 // animação da aparição dos icones dos contatos no botão
@@ -152,10 +151,14 @@ checkbox_contact.addEventListener('change', function() {
 
 
 
+
+const text_to_change = document.querySelectorAll(`.text-3`);
+let index = -1;
+
+
 /* Animações CSS */
 
 // animação de digitação do .texto-3
-const text_to_change = document.querySelectorAll(`.text-3`);
 
 function change_text()
 {
@@ -181,6 +184,41 @@ function change_text()
     })
 }
 
+
+
+
+
+const filter = document.querySelectorAll(`.port-search-option-box`);
+const options = document.querySelector(`.port-search-options-container`)
+const path = document.querySelector(`.port-search-path-container`);
+
+/* Filtro de projetos */
+
+filter.forEach(element => {
+    element.addEventListener('click', function() {
+        if (element.classList.contains(`search-active`))
+        {
+            element.classList.remove(`search-active`);
+            element.classList.add(`search-inactive`);
+
+            const index = Array.from(path.children).indexOf(element);
+            path.removeChild(path.children[index - 1]);
+            options.appendChild(element);
+        }
+
+        else if (element.classList.contains(`search-inactive`))
+        {
+            element.classList.remove(`search-inactive`);
+            element.classList.add(`search-active`);
+
+            const division = document.createElement('div');
+            division.classList.add(`port-search-path-division`);
+            division.textContent = `+`;
+            path.appendChild(division);  
+            path.appendChild(element);
+        }
+    });
+});
 
 
 

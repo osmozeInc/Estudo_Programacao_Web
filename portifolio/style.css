@@ -320,25 +320,106 @@ html, body{
     }
 }
 
+.port-search-options-container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 10%;
+
+    & .port-search-option-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        min-width: 100px;
+        padding: 10px;
+        color: #ccc;
+        border: #ccc solid 2px;
+        border-radius: 20px;
+        background-color: transparent;
+    }
+}
+
+.port-search-path-container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 30px;
+    margin-left: 15%;
+    width: 70%;
+
+    & .port-search-path-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        min-width: 100px;
+        padding: 10px;
+        border: lawngreen solid 2px;
+        border-radius: 20px;
+        color: lawngreen;
+        background-color: transparent;
+    }
+
+    & .port-search-path-division{
+        color: lawngreen;
+        margin-right: 20px;
+        font-size: 30px;
+    }
+}
+
 .port-projects-section-container{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 80px;
     width: 100%;
 
-    & .port-projects-cards-container{
+    & .port-projects-container{
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: space-evenly;
-        
+        justify-content: center;
         width: 80%;
-        background-color: #333;
 
-        & .port-project-card{
-            min-width: 300px;
-            min-height: 200px;
-            border-radius: 50px;
-            background-color: #e0e0e0;
+
+        & .port-project-card-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 3%;
+            margin-right: 3%;
+            margin-bottom: 3%;
+            
+            & .port-project-card{
+                min-width: 300px;
+                min-height: 200px;
+                border-radius: 50px;
+                background-color: #e0e0e0;
+            }
+    
+            & .port-project-description{
+                min-width: 0px;
+                min-height: 0px;
+                position: absolute;
+                opacity: 0;
+                border-radius: 20px;
+                border: #000 solid 2px;
+                background-color: #ccc;
+                transform: translatey(-90px);
+            }
+    
+            & .port-project-card:hover + .port-project-description{
+                min-width: 300px;
+                min-height: 70px;
+                transform: translate(40px, -120px);
+                transition-duration: 1s;
+                opacity: 1;
+            }
         }
     }
 }
