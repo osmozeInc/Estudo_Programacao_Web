@@ -82,10 +82,10 @@ document.querySelectorAll('.portifolio-link').forEach(link => {
         checkbox_bars.dispatchEvent(event);
 
         home_page.style.display = 'none';
-        port_page.style.display = 'none';
-        talk_page.style.display = 'block';
+        port_page.style.display = 'block';
+        talk_page.style.display = 'none';
 
-        title_page.style.transform = `translateY(-90px)`;
+        title_page.style.transform = `translateY(-45px)`;
         title_page.style.transitionDuration = `1s`;
     });
 });
