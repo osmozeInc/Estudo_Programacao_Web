@@ -4,7 +4,7 @@ html, body{
 }
 
 .home-page{
-    display: block;
+    display: none;
 }
 
 .talk-page{
@@ -230,7 +230,7 @@ html, body{
 /* ABOUT PAGE */
 
 .port-page{
-    display: none;
+    display: block;
     width: 100%;
     height: 100%;
 }
@@ -240,9 +240,8 @@ html, body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 70px;
     width: 100%;
-    background-color: #555;
 
     & .port-about-card{
         display: flex;
@@ -251,10 +250,9 @@ html, body{
         flex-direction: column;
         width: 80%;
         height: 80%;
-        margin-top: 30px;
         border: #e0e0e0 solid 2px;
         border-radius: 30px;
-        
+
         & .port-about-title{
             display: inline-block;
             color: #e0e0e0;
@@ -272,6 +270,26 @@ html, body{
             margin-right: 8%;
             font-size: large;
         }
+    }
+}
+
+.port-habilits-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    background-color: #555;
+
+    & .port-habilits-card{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        width: 80%;
+        height: 80%;
+        border: #e0e0e0 solid 2px;
+        border-radius: 30px;
     }
 }
 
@@ -349,14 +367,14 @@ html, body{
             margin-left: 3%;
             margin-right: 3%;
             margin-bottom: 3%;
-            
+
             & .port-project-card{
                 min-width: 300px;
                 min-height: 200px;
                 border-radius: 50px;
                 background-color: #e0e0e0;
             }
-    
+
             & .port-project-description{
                 min-width: 0px;
                 min-height: 0px;
@@ -367,7 +385,7 @@ html, body{
                 background-color: #ccc;
                 transform: translatey(-90px);
             }
-    
+
             & .port-project-card:hover + .port-project-description{
                 min-width: 300px;
                 min-height: 70px;

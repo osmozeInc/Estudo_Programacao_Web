@@ -31,13 +31,28 @@ checkbox_bars.addEventListener('change', function() {
     } 
 });
 
+// verificação do titulo da página em relação a página
+function check_title() {
+    let home = window.getComputedStyle(home_page);
+    let port = window.getComputedStyle(port_page);
+    let talk = window.getComputedStyle(talk_page);
+
+    if (home.display == 'block')
+        title_page.style.transform = `translateY(0px)`;
+    else if (port.display == 'block')
+        title_page.style.transform = `translateY(-45px)`;
+    else if (talk.display == 'block')
+        title_page.style.transform = `translateY(-90px)`;
+    else console.log('erro');
+}
+
 // seleção das páginas pelas opções
 document.getElementById('option-1').addEventListener('click', function()
 {
     const event = new Event('change');
     checkbox_bars.checked = false;
     checkbox_bars.dispatchEvent(event);
-    
+
     home_page.style.display = 'block';
     port_page.style.display = 'none';
     talk_page.style.display = 'none';
@@ -221,9 +236,9 @@ filter.forEach(element => {
 });
 
 
-
+check_title();
 blink_contact();
-setInterval(blink_contact, 3000);
-
 change_text();
+
+setInterval(blink_contact, 3000);
 setInterval(change_text, 10000);
