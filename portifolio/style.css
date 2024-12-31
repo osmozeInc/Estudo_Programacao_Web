@@ -4,11 +4,7 @@ html, body{
 }
 
 .home-page{
-    display: none;
-}
-
-.talk-page{
-    display: none;
+    display: block;
 }
 
 .home-bar{
@@ -230,7 +226,7 @@ html, body{
 /* ABOUT PAGE */
 
 .port-page{
-    display: block;
+    display: none;
     width: 100%;
     height: 100%;
 }
@@ -303,7 +299,7 @@ html, body{
         }
 
         & .front-end{
-            background-image: linear-gradient(to bottom, rgb(95, 138, 255), #000080 );
+            background-image: linear-gradient(to bottom, #5e8afe, #2020f0 );
         }
         
         & .back-end{
@@ -439,4 +435,11 @@ html, body{
             }
         }
     }
+}
+
+
+/* TALK PAGE */
+
+.talk-page{
+    display: none;
 }
