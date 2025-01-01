@@ -4,17 +4,17 @@ html, body{
 }
 
 .home-page{
-    display: block;
+    display: none;
 }
 
-.home-bar{
+.navbar{
     background-color: #e0e0e0;
     height: 70px;
     width: 100%;
     display: flex;
 }
 
-.home-bar-left-side{
+.navbar-left-side{
     display: flex;
     justify-content: start;
     align-items: center;
@@ -22,7 +22,7 @@ html, body{
     margin-left: 30px;
 }
 
-.home-bar-middle-side{
+.navbar-middle-side{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@ html, body{
     overflow: hidden;
 }
 
-.home-bar-right-side{
+.navbar-right-side{
     display: flex;
     justify-content: end;
     align-items: center;
@@ -39,7 +39,7 @@ html, body{
     margin-right: 30px;
 }
 
-.home-bar-bars-toggle{
+.navbar-bars-toggle{
     width: 40px;
     height: 40px;
     background-color: #e0e0e0;
@@ -50,7 +50,7 @@ html, body{
     align-items: center;
 }
 
-.home-bar-bars{
+.navbar-bars{
     background-color: #111;
     width: 40px;
     height: 6px;
@@ -62,25 +62,25 @@ html, body{
     display: none;
 }
 
-#checkbox-bars:checked + .home-bar-bars-toggle #bar-1{
+#checkbox-bars:checked + .navbar-bars-toggle #bar-1{
     transform: Translate(1px, -9px) rotate(45deg) scaleX(1.35);
     transition-duration: .5s;
     transform-origin: left;
 }
 
-#checkbox-bars:checked + .home-bar-bars-toggle #bar-2{
+#checkbox-bars:checked + .navbar-bars-toggle #bar-2{
     transform: rotate(180deg);
     transition-duration: .8s;
     opacity: 0;
 }
 
-#checkbox-bars:checked + .home-bar-bars-toggle #bar-3{
+#checkbox-bars:checked + .navbar-bars-toggle #bar-3{
     transform: Translate(2px, -13px) rotate(-45deg) scaleX(1.35);
     transition-duration: .5s;
     transform-origin: bottom;
 }
 
-.home-bar-title-page{
+.navbar-title-page{
     text-align: center;
     color: #111;
     font-size: 22px;
@@ -90,7 +90,7 @@ html, body{
     line-height: 2;
 }
 
-.home-bar-bars-options{
+.navbar-bars-options{
     display: flex;
     position: absolute;
     justify-content: center;
@@ -107,12 +107,12 @@ html, body{
     margin-bottom: -20px;
 }
 
-.home-bar-bars-options:hover{
+.navbar-bars-options:hover{
     background-color: #111;
     color: #e0e0e0;
 }
 
-.home-bar-circle-profile{
+.navbar-circle-profile{
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -137,7 +137,7 @@ html, body{
     overflow: hidden;
 }
 
-.home-bar-contacts{
+.navbar-contacts{
     display: flex;
     align-items: center;
     justify-content: end;
@@ -151,7 +151,7 @@ html, body{
     text-decoration: none;
 }
 
-.home-bar-contacts:hover{
+.navbar-contacts:hover{
     background-color: #111;
     color: #e0e0e0;
 }
@@ -161,7 +161,7 @@ html, body{
     margin-right: 20px;
 }
 
-.home-bar-icon{
+.navbar-icon{
     color: #e0e0e0;
     position: absolute;
     opacity: 0;
@@ -226,9 +226,16 @@ html, body{
 /* ABOUT PAGE */
 
 .port-page{
-    display: none;
+    display: block;
     width: 100%;
     height: 100%;
+
+    & .port-section-title{
+        color: #e0e0e0;
+        font-weight: 600;
+        margin-top: 60px;
+        margin-left: 5%;
+    }
 }
 
 .port-about-container{
@@ -275,62 +282,109 @@ html, body{
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px;
+    margin-top: 10px;
+    
+    & .front-end{
+        background-image: linear-gradient(to bottom, #5e8afe, #2020f0 );
+        background: linear-gradient(120deg, #5e8afe 30%, #4050f0 60%, #2020f0 );
+    }
+    
+    & .back-end{
+        background-image: linear-gradient(to bottom, orange, orangered );
+    }
+    
+    & .data-science{
+        background-image: linear-gradient(to bottom,  #77cc00, #2a0);
+    }
 
-    & .port-habilits-card{
-        display: flex;
-        align-items: top;
-        justify-content: start;
-        flex-direction: column;
-        width: 170px;
-        margin: 18px;
-        padding: 20px;
-        border-radius: 20px;
-        background-color: #e0e0e0;
-
-        & .port-habilits-card-icon{
+    .port-habilits-card{
+        background-color: transparent;
+        perspective: 1000px;
+        width: 190px;
+        height: 254px;
+    
+        .port-habilits-card-front, .port-habilits-card-back {
+            position: absolute;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            transform: scale(1.5);
-            border-radius: 10px;
+            flex-direction: column;
+            justify-content: end;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1rem;
         }
 
-        & .front-end{
-            background-image: linear-gradient(to bottom, #5e8afe, #2020f0 );
+        .port-habilits-card-front {
+            align-items: center;
+
+            .card-front-icon{
+                color: #111;
+                transform: scale(3);
+                margin-bottom: 80px;
+            }
+
+            .card-front-title{
+                color: #e0e0e0;
+                font-weight: 700;
+                margin-bottom: 40px;
+            }
+        }
+
+        & .port-habilits-card-back{
+            align-items: start;
+            padding: 15px;
+            transform: rotateY(180deg);
+            background-color: #e0e0e0;
+
+            & .card-back-icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                transform: scale(1.5);
+                border-radius: 10px;
+            }
+            
+            & .card-back-title{
+                flex-wrap: wrap;
+                font-size: x-large ;
+                font-weight: 1000;
+                margin-top: 20px;
+            }
+            
+            & .card-back-line{
+                height: 2px;
+                background-color: #111;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            
+            & .card-back-text{
+                justify-content: start;
+                color: #111;
+                font-size: larger;
+                margin-top: 10px;
+            }
         }
         
-        & .back-end{
-            background-image: linear-gradient(to bottom, orange, orangered );
+        .port-habilits-card-flip{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition-duration: .8s;
+            transform-style: preserve-3d;
         }
+    }
 
-        & .data-science{
-            background-image: linear-gradient(to bottom,  #77cc00, #44bb00);
-        }
-
-        & .port-habilits-card-title{
-            flex-wrap: wrap;
-            font-size: x-large ;
-            font-weight: 1000;
-            margin-top: 20px;
-        }
-
-        & .port-habilits-card-line{
-            height: 2px;
-            background-color: #111;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        & .port-habilits-card-text{
-            color: #111;
-            font-size: larger;
-            margin-top: 10px;
-        }
-
+    .port-habilits-card:hover .port-habilits-card-flip {
+        transform: rotateY(180deg);
     }
 }
+
+  
 
 .port-search-options-container{
     display: flex;
