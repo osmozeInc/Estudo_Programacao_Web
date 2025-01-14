@@ -300,10 +300,10 @@ html, body{
     .port-habilits-card{
         background-color: transparent;
         perspective: 1000px;
-        width: 190px;
-        height: 254px;
+        width: 180px;
+        height: 250px;        
     
-        .port-habilits-card-front, .port-habilits-card-back {
+        & .port-habilits-card-front, .port-habilits-card-back {
             position: absolute;
             display: flex;
             flex-direction: column;
