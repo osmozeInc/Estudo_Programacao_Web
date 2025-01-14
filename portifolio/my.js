@@ -203,9 +203,9 @@ function change_text()
 
 
 
-const filter = document.querySelectorAll(`.port-search-option-box`);
-const options = document.querySelector(`.port-search-options-container`)
-const path = document.querySelector(`.port-search-path-container`);
+const filter = document.querySelectorAll(`.filter-button`);
+const options = document.querySelector(`.port-filter-options-container`)
+const path = document.querySelector(`.port-filter-path-container`);
 
 /* Filtro de projetos */
 
@@ -221,7 +221,7 @@ filter.forEach(element => {
             options.appendChild(element);
         }
 
-        else if (element.classList.contains(`search-inactive`))
+        else
         {
             element.classList.remove(`search-inactive`);
             element.classList.add(`search-active`);

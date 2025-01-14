@@ -16,38 +16,38 @@
 
 
     <!-- barra de navegação -->
-    <div class="navbar"> 
+    <div class="home-bar"> 
 
-        <div class="col navbar-left-side"> <!-- barras de conteudos da página -->
+        <div class="col home-bar-left-side"> <!-- barras de conteudos da página -->
             <input type="checkbox" id="checkbox-bars">
-                <label class="navbar-bars-toggle" for="checkbox-bars">
-                    <div id="bar-1" class="navbar-bars"></div>
-                    <div id="bar-2" class="navbar-bars"></div>
-                    <div id="bar-3" class="navbar-bars"></div>
+                <label class="home-bar-bars-toggle" for="checkbox-bars">
+                    <div id="bar-1" class="home-bar-bars"></div>
+                    <div id="bar-2" class="home-bar-bars"></div>
+                    <div id="bar-3" class="home-bar-bars"></div>
                 </label>
             </input>
-            <a id="option-1" class="navbar-bars-options" href="#">Início</a>
-            <a id="option-2" class="navbar-bars-options" href="#">Portifólio</a>
-            <a id="option-3" class="navbar-bars-options" href="#">Vamos Conversar</a>
+            <a id="option-1" class="home-bar-bars-options" href="#">Início</a>
+            <a id="option-2" class="home-bar-bars-options" href="#">Portifólio</a>
+            <a id="option-3" class="home-bar-bars-options" href="#">Vamos Conversar</a>
         </div>
         
-        <div class="navbar-middle-side"> <!-- titulo da pagina-->
-            <p id="title-page" class="navbar-title-page">Início<br>Portifólio<br>Vamos Conversar</p>
+        <div class="home-bar-middle-side"> <!-- titulo da pagina-->
+            <p id="title-page" class="home-bar-title-page">Início<br>Portifólio<br>Vamos Conversar</p>
         </div>
         
-        <div class="col navbar-right-side"> <!-- icone de contatos -->
+        <div class="col home-bar-right-side"> <!-- icone de contatos -->
 
             <input type="checkbox" id="checkbox-contact">
-                <label class="navbar-profile-toggle" for="checkbox-contact">
-                    <div class="navbar-circle-profile">
+                <label class="home-bar-profile-toggle" for="checkbox-contact">
+                    <div class="home-bar-circle-profile">
 
-                        <i id="animation-opacity-icon-1" class="fa-solid fa-code fa-xl navbar-icon"></i>
-                        <i id="animation-opacity-icon-2" class="fa-brands fa-instagram fa-xl navbar-icon"></i>
-                        <i id="animation-opacity-icon-3" class="fa-brands fa-linkedin-in fa-xl navbar-icon"></i>
-                        <i id="animation-opacity-icon-4" class="fa-regular fa-envelope fa-xl navbar-icon"></i>
+                        <i id="animation-opacity-icon-1" class="fa-solid fa-code fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-2" class="fa-brands fa-instagram fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-3" class="fa-brands fa-linkedin-in fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-4" class="fa-regular fa-envelope fa-xl home-bar-icon"></i>
                         
 
-                        <i id="icon-not-animated" class="fa-solid fa-user fa-xl navbar-icon"></i>
+                        <i id="icon-not-animated" class="fa-solid fa-user fa-xl home-bar-icon"></i>
                     </div>
                 </label>
             </input>
@@ -59,19 +59,19 @@
     <!-- contatos -->
     <div class="d-flex justify-content-end">
         <div class="home-contacts-container">
-            <a id="contact-1" class="navbar-contacts" href="https://github.com/osmozeInc" target="_blank">
+            <a id="contact-1" class="home-bar-contacts" href="https://github.com/osmozeInc" target="_blank">
                 osmozeInc
                 <i class="fa-brands fa-github fa-xl contact-content"></i>
             </a>
-            <a id="contact-2" class="navbar-contacts" href="https://www.instagram.com/caiomonte.py/" target="_blank">
+            <a id="contact-2" class="home-bar-contacts" href="https://www.instagram.com/caiomonte.py/" target="_blank">
                 caiomonte.py
                 <i class="fa-brands fa-instagram fa-xl contact-content"></i>
             </a>
-            <a id="contact-3" class="navbar-contacts" href="https://www.linkedin.com/in/dev-caiomonte/" target="_blank">
+            <a id="contact-3" class="home-bar-contacts" href="https://www.linkedin.com/in/dev-caiomonte/" target="_blank">
                 dev-caiomonte
                 <i class="fa-brands fa-linkedin fa-xl contact-content"></i>
             </a>
-            <a id="contact-4" class="navbar-contacts" href="mailto:caiomm076@gmail.com" target="_blank">
+            <a id="contact-4" class="home-bar-contacts" href="mailto:caiomm076@gmail.com" target="_blank">
                 E-mail
                 <i class="fa-solid fa-envelope fa-xl contact-content"></i>
             </a>
@@ -90,13 +90,16 @@
                 <a class="text-4 portifolio-link" href="#">Conheça meu trabalho</a>
             </div>
         </div>
+
+        <br><br><br><br>
     </div>
 
 
     <!-- portifolio -->
     <div id="port-page" class="port-page">
 
-        <div class="port-about-container"> <!-- sobre mim -->
+        <!-- sobre mim -->
+        <div class="port-about-container"> 
             <div class="port-about-card">
                 <div style="margin-top: -15px;"><p class="port-about-title">Sobre mim</p></div>
 
@@ -104,94 +107,68 @@
             </div>
         </div>
 
-        <h3 class="port-section-title">Habilidades</h3>
-        
-        <div class="port-habilits-container"> <!-- habilidades -->
-
-            <div class="port-habilits-card"> <!-- front-end-->
-                <div class="port-habilits-card-flip">
-                    <div class="port-habilits-card-front front-end">
-                        <div class="card-front-icon fa-solid fa-desktop fa-2xl"></div>
-                        <h3 class="card-front-title">Front-End</h3>
-                    </div>
-
-                    <div class="port-habilits-card-back">
-                        <div class="card-back-icon front-end fa-solid fa-desktop fa-2xl"></div>
-                    <div class="card-back-title" style="color: #2020f0;">Front-End</div>
-                    <div class="card-back-line"></div>
-                    <div class="card-back-text">
-                        JavaScript<br>HTML<br>CSS
-                    </div>
-                    </div>
-                </div>
-            </div>
-                    
+        <!-- habilidades -->
+        <div class="port-habilits-container"> 
+            
             <div class="port-habilits-card">
-                <div class="port-habilits-card-flip">
-                    <div class="port-habilits-card-front back-end">
-
-                    </div>
-
-                    <div class="port-habilits-card-back">
-
-                    </div>
-                </div>
-
+                <div class="port-habilits-card-icon front-end fa-brands fa-html5 fa-2xl"></div>
+                <div class="port-habilits-card-title">Front-End</div>
+                <div class="port-habilits-card-line"></div>
+                <div class="port-habilits-card-text">HTML<br>CSS</div>
             </div>
-
+            
             <div class="port-habilits-card">
-                <div class="port-habilits-card-icon back-end fa-solid fa-server fa-2xl"></div>
+                <div class="port-habilits-card-icon back-end fa-solid fa-database fa-2xl"></div>
                 <div class="port-habilits-card-title" style="color: orangered;">Back-End</div>
                 <div class="port-habilits-card-line"></div>
-                <div class="port-habilits-card-text">
-                    Python<br>PHP<br>C#
-                </div>
+                <div class="port-habilits-card-text">Python</div>
             </div>
 
             <div class="port-habilits-card">
                 <div class="port-habilits-card-icon data-science fa-solid fa-database fa-2xl"></div>
                 <div class="port-habilits-card-title" style="color: #290;">Ciência de Dados</div>
                 <div class="port-habilits-card-line"></div>
-                <div class="port-habilits-card-text">
-                    EXCEL<br>SQL<br>Python
-                </div>
-            </div>-->
-
-        </div>
-
-
-        <div id="port-search-options" class="port-search-options-container">
-            <button class="port-search-option-box port-search-path-box search-inactive">Python</button>
-            <button class="port-search-option-box port-search-path-box search-inactive">JavaScript</button>
-            <button class="port-search-option-box port-search-path-box search-inactive">C#</button>
-        </div>
-
-        <div id="port-search-path" class="port-search-path-container">
-            <button class="port-search-path-box">Projetos</button>
-        </div>
-
-        <div class="port-projects-section-container">
-            <div class="port-projects-container">
-                <div class="port-project-card-container" data-tags="js">
-                    <a href="" class="port-project-card"></a>
-                    <a href="" class="port-project-description"></a>
-                </div>
-                <div class="port-project-card-container">    
-                    <a href="" class="port-project-card"></a>
-                    <a href="" class="port-project-description"></a>
-                </div>
-                <div class="port-project-card-container">    
-                    <a href="" class="port-project-card"></a>
-                    <a href="" class="port-project-description"></a>
-                </div>
-                <div class="port-project-card-container">    
-                    <a href="" class="port-project-card"></a>
-                    <a href="" class="port-project-description"></a>
-                </div>
+                <div class="port-habilits-card-text">SQL</div>
             </div>
+
+        </div>
+
+        <!-- projetos -->
+        <div class="port-projects-container">
+
+            <div class="port-filter-options-container">
+                <button class="filter-button search-inactive">Python</button>
+                <button class="filter-button search-inactive">JavaScript</button>
+                <button class="filter-button search-inactive">C#</button>
+                <button class="filter-button search-inactive">Java</button>
+                <button class="filter-button search-inactive">C++</button>
+            </div>
+            
+            <div class="port-filter-path-container">
+                <button class="filter-button">Projetos</button>
+            </div>
+            
+            <div class="port-project-cards-container">
+                    <div class="port-project-card-container" data-tags="js">
+                        <a href="" class="port-project-card"></a>
+                        <a href="" class="port-project-description"></a>
+                    </div>
+                    <div class="port-project-card-container">    
+                        <a href="" class="port-project-card"></a>
+                        <a href="" class="port-project-description"></a>
+                    </div>
+                    <div class="port-project-card-container">    
+                        <a href="" class="port-project-card"></a>
+                        <a href="" class="port-project-description"></a>
+                    </div>
+                    <div class="port-project-card-container">    
+                        <a href="" class="port-project-card"></a>
+                        <a href="" class="port-project-description"></a>
+                    </div>
+                </div>
         </div>
     </div>
-
+    
 
     <!-- vamos conversar -->
     <div id="talk-page" class="talk-page">
