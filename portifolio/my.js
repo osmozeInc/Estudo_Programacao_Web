@@ -203,34 +203,25 @@ function change_text()
 
 
 
-const filter = document.querySelectorAll(`.filter-button`);
-const options = document.querySelector(`.port-filter-options-container`)
-const path = document.querySelector(`.port-filter-path-container`);
+/* FILTRO DE PROJETOS */
 
-/* Filtro de projetos */
+// função para mudar a cor dos botões de filtro
+const buttons = document.querySelectorAll('.filter-button')
+const projects = document.querySelectorAll('.port-project-card-container')
+let buttons_active = [];
 
-filter.forEach(element => {
-    element.addEventListener('click', function() {
-        if (element.classList.contains(`search-active`))
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        if (!button.classList.contains('button-active'))
         {
-            element.classList.remove(`search-active`);
-            element.classList.add(`search-inactive`);
-
-            const index = Array.from(path.children).indexOf(element);
-            path.removeChild(path.children[index - 1]);
-            options.appendChild(element);
+            button.classList.add('button-active');
+            buttons_active.push(button.textContent)
+            console.log(buttons_active);
         }
-
         else
         {
-            element.classList.remove(`search-inactive`);
-            element.classList.add(`search-active`);
-
-            const division = document.createElement('div');
-            division.classList.add(`port-search-path-division`);
-            division.textContent = `+`;
-            path.appendChild(division);  
-            path.appendChild(element);
+            button.classList.remove('button-active');
+            buttons_active.splice(buttons_active.indexOf(button.textContent), 1);
         }
     });
 });

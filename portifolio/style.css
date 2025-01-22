@@ -4,7 +4,7 @@ html, body{
 }
 
 .home-page{
-    display: block;
+    display: none;
 }
 
 .home-bar{
@@ -226,7 +226,7 @@ html, body{
 /* ABOUT PAGE */
 
 .port-page{
-    display: none;
+    display: block;
 }
 
 .port-about-container{
@@ -340,7 +340,7 @@ html, body{
     width: 90%;
     margin-top: 50px;
 
-    .port-filter-options-container{
+    .port-filter-container{
         display: flex;
         align-items: center;
         justify-content: start;
@@ -361,35 +361,10 @@ html, body{
             border-radius: 20px;
             background-color: transparent;
         }
-    }
 
-    .port-filter-path-container{
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        flex-wrap: nowrap;
-        overflow: auto;
-        margin-top: 20px;
-        margin-left: 5%;
-        width: 90%;
-    
-        .filter-button{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 100px;
-            padding: 10px;
+        & .button-active{
+            color: lawngreen;
             border: lawngreen solid 2px;
-            border-radius: 20px;
-            color: lawngreen;
-            background-color: transparent;
-        }
-    
-        .port-search-path-division{
-            color: lawngreen;
-            margin-right: 20px;
-            margin-left: 20px;
-            font-size: 30px;
         }
     }
     
