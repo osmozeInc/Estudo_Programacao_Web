@@ -207,7 +207,6 @@ function change_text()
 
 // função para mudar a cor dos botões de filtro
 const buttons = document.querySelectorAll('.filter-button')
-const projects = document.querySelectorAll('.port-project-card-container')
 let buttons_active = [];
 
 buttons.forEach(button => {
@@ -216,16 +215,37 @@ buttons.forEach(button => {
         {
             button.classList.add('button-active');
             buttons_active.push(button.textContent)
-            console.log(buttons_active);
         }
         else
         {
             button.classList.remove('button-active');
             buttons_active.splice(buttons_active.indexOf(button.textContent), 1);
         }
+        filter_items() // chama a função a cada alteração
     });
 });
 
+const projects = document.querySelectorAll('.port-project-card-container')
+// função para filtrar projetos
+function filter_items(){        
+    projects.forEach(project => {
+        if (buttons_active.length == 0)
+            project.style.opacity = 1;
+
+        for (let i = 0; i < buttons_active.length; i++) {
+            if (!project.classList.contains(buttons_active[i])){
+                project.style.transitionDuration = '.5s';
+                project.style.opacity = 0;
+                continue;
+            }
+            else
+            {
+                project.style.transitionDuration = '.5s';
+                project.style.opacity = 1;
+            }
+        }
+    })
+}
 
 check_title();
 blink_contact();
