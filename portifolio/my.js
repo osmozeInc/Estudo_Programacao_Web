@@ -233,12 +233,16 @@ function filter_items(){
         console.log(buttons_active)
         console.log(project.dataset.tag1)
 
-        if (buttons_active.includes(project.dataset.tag1) || buttons_active.length == 0)
+        if (buttons_active.includes(project.dataset.tag1) || buttons_active.includes(project.dataset.tag2) || buttons_active.length == 0)
             project.style.display = 'flex';
         else
             project.style.display = 'none';
     })
 }
+
+
+
+
 
 
 /* Name Section do Portifolio */

@@ -391,7 +391,7 @@ html, body{
     
     .port-project-cards-container{
         display: flex;
-        justify-content: start;
+        justify-content: center;
         margin-top: 50px;
         margin-bottom: 3%;
         flex-wrap: wrap;
@@ -405,21 +405,32 @@ html, body{
         }
 
         .port-project-card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
             min-width: 300px;
             min-height: 200px;
             border-radius: 50px;
             background-color: #e0e0e0;
+            text-decoration: none;
+            color: #111;
+            font-size: x-large;
+            font-weight: 500;
+            
         }
 
         .port-project-description{
-            min-width: 0px;
-            min-height: 0px;
+            width: 0px;
+            height: 0px;
             position: absolute;
             opacity: 0;
             border-radius: 20px;
             border: #000 solid 2px;
             background-color: #ccc;
             transform: translatey(-90px);
+            flex-wrap: wrap;
+            padding: 10px;
+            font-weight: 500;
         }
 
         .port-project-card:hover + .port-project-description{
