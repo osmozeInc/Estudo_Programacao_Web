@@ -227,6 +227,32 @@ html, body{
 
 .port-page{
     display: block;
+
+    .habilits, .projects, .about{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 90px;
+        width: 100%;
+    }
+
+
+    .name-section{
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        width: 5%;
+        transform: translateY(100px);
+        
+        p{
+            transform: rotate(-90deg);
+            color: #e0e0e0;
+            letter-spacing: 7px;
+            font-size: 22px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            white-space: nowrap;
+        }
+    }
 }
 
 .port-about-container{
@@ -234,10 +260,9 @@ html, body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 70px;
-    width: 100%;
+    width: 95%;
 
-    & .port-about-card{
+    .port-about-card{
         display: flex;
         align-items: top;
         justify-content: start;
@@ -247,7 +272,7 @@ html, body{
         border: #e0e0e0 solid 2px;
         border-radius: 30px;
 
-        & .port-about-title{
+        .port-about-title{
             display: inline-block;
             color: #e0e0e0;
             margin-left: 5%;
@@ -257,7 +282,7 @@ html, body{
             padding-right: 15px;
         }
 
-        & .port-about-text{
+        .port-about-text{
             color: #e0e0e0;
             margin-top: -10px;
             margin-left: 8%;
@@ -272,11 +297,9 @@ html, body{
     align-items: top;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 50px;
+    width: 95%;
 
-    & .port-habilits-card{
+    .port-habilits-card{
         display: flex;
         align-items: top;
         justify-content: start;
@@ -287,7 +310,7 @@ html, body{
         border-radius: 20px;
         background-color: #e0e0e0;
 
-        & .port-habilits-card-icon{
+        .port-habilits-card-icon{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -298,33 +321,33 @@ html, body{
 
         }
 
-        & .front-end{
+        .front-end{
             background-image: linear-gradient(to bottom, rgb(95, 138, 255), #000080 );
         }
         
-        & .back-end{
+        .back-end{
             background-image: linear-gradient(to bottom, orange, orangered );
         }
 
-        & .data-science{
+        .data-science{
             background-image: linear-gradient(to bottom,  #77cc00, #44bb00);
         }
 
-        & .port-habilits-card-title{
+        .port-habilits-card-title{
             flex-wrap: wrap;
             font-size: x-large ;
             font-weight: 1000;
             margin-top: 20px;
         }
 
-        & .port-habilits-card-line{
+        .port-habilits-card-line{
             height: 2px;
             background-color: #111;
             margin-top: 10px;
             margin-bottom: 10px;
         }
 
-        & .port-habilits-card-text{
+        .port-habilits-card-text{
             color: #111;
             font-size: larger;
             margin-top: 10px;
@@ -336,9 +359,7 @@ html, body{
 .port-projects-container{
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
-    width: 90%;
-    margin-top: 50px;
+    width: 95%;
 
     .port-filter-container{
         display: flex;
@@ -349,7 +370,7 @@ html, body{
         margin-left: 5%;
         width: 90%;    
     
-        & .filter-button{
+        .filter-button{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -362,7 +383,7 @@ html, body{
             background-color: transparent;
         }
 
-        & .button-active{
+        .button-active{
             color: lawngreen;
             border: lawngreen solid 2px;
         }
@@ -370,7 +391,7 @@ html, body{
     
     .port-project-cards-container{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: start;
         margin-top: 50px;
         margin-bottom: 3%;
         flex-wrap: wrap;
@@ -380,17 +401,17 @@ html, body{
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 10px;
+            margin: 20px;
         }
 
-        & .port-project-card{
+        .port-project-card{
             min-width: 300px;
             min-height: 200px;
             border-radius: 50px;
             background-color: #e0e0e0;
         }
 
-        & .port-project-description{
+        .port-project-description{
             min-width: 0px;
             min-height: 0px;
             position: absolute;
@@ -401,7 +422,7 @@ html, body{
             transform: translatey(-90px);
         }
 
-        & .port-project-card:hover + .port-project-description{
+        .port-project-card:hover + .port-project-description{
             min-width: 300px;
             min-height: 70px;
             transform: translate(40px, -120px);

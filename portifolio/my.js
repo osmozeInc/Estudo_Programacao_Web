@@ -225,31 +225,36 @@ buttons.forEach(button => {
     });
 });
 
-const projects = document.querySelectorAll('.port-project-card-container')
 // função para filtrar projetos
+const projects = document.querySelectorAll('.port-project-card-container')
+
 function filter_items(){        
     projects.forEach(project => {
-        if (buttons_active.length == 0)
-            project.style.opacity = 1;
+        console.log(buttons_active)
+        console.log(project.dataset.tag1)
 
-        for (let i = 0; i < buttons_active.length; i++) {
-            if (!project.classList.contains(buttons_active[i])){
-                project.style.transitionDuration = '.5s';
-                project.style.opacity = 0;
-                continue;
-            }
-            else
-            {
-                project.style.transitionDuration = '.5s';
-                project.style.opacity = 1;
-            }
-        }
+        if (buttons_active.includes(project.dataset.tag1) || buttons_active.length == 0)
+            project.style.display = 'flex';
+        else
+            project.style.display = 'none';
     })
 }
+
+
+/* Name Section do Portifolio */
+
+function up_name_section(){
+    document.querySelectorAll('.name-section').forEach(name => {
+        name.style.transitionDuration = `1s`;
+        name.style.transform = `translateY(0px)`;
+    })
+}
+
 
 check_title();
 blink_contact();
 change_text();
+up_name_section();
 
 setInterval(blink_contact, 3000);
 setInterval(change_text, 10000);
