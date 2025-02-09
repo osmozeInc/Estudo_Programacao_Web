@@ -4,7 +4,7 @@ html, body{
 }
 
 .home-page{
-    display: none;
+    display: block;
 }
 
 .home-bar{
@@ -226,7 +226,7 @@ html, body{
 /* ABOUT PAGE */
 
 .port-page{
-    display: block;
+    display: none;
 
     .habilits, .projects, .about{
         display: flex;
