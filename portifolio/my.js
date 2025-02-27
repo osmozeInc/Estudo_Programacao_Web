@@ -5,7 +5,6 @@ const port_page = document.getElementById('port-page');
 const talk_page = document.getElementById('talk-page');
 const title_page = document.getElementById('title-page');
 
-
 /* BARRA DE OPÇÕES */
 
 // animação das opções na barra de opções
