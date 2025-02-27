@@ -4,7 +4,7 @@ html, body{
 }
 
 .home-page{
-    display: block;
+    display: none;
 }
 
 .home-bar{
@@ -446,5 +446,68 @@ html, body{
 /* TALK PAGE */
 
 .talk-page{
-    display: none;
+    display: block;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 80px;
+
+    .login-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 50%;
+
+        .login-type{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            padding: 10px;
+
+            p{
+                color: #e0e0e0;
+                font-size: large;
+                font-weight: 400;
+            }
+        }
+
+            .log-in{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 90%;
+                
+                input{
+                    width: 100%;
+                    height: 40px;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    background-color: #e0e0e0;
+                    border-radius: 10px;
+                    font-weight: 600;
+                }
+
+                a{
+                    width: 100%;
+                    text-decoration: none;
+                    color: #e0e0e0;
+                }
+            }
+    }
+
+    .description-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        background-color: #888;
+    }
 }
