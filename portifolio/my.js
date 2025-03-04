@@ -254,6 +254,32 @@ function up_name_section(){
 }
 
 
+
+const log_in = document.getElementById(`log-in`);
+const sing_in = document.getElementById(`sign-in`);
+
+const selection_type = document.querySelector(`.selection-type`);
+const button_type = document.querySelector(`.button-type`);
+
+const log_in_container = document.querySelector(`.log-in`);
+const sing_in_container = document.querySelector(`.sing-in`);
+
+
+log_in.addEventListener('click', function() {
+    button_type.style.transform = `translateX(0px)`;
+
+    log_in_container.style.display = `flex`;
+    sing_in_container.style.display = `none`;
+});
+
+sing_in.addEventListener('click', function() {
+    button_type.style.transform = `translateX(${selection_type.offsetWidth - 80}px)`;
+
+    log_in_container.style.display = `none`;
+    sing_in_container.style.display = `flex`;
+});
+
+
 check_title();
 blink_contact();
 change_text();

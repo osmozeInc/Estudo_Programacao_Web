@@ -241,11 +241,10 @@ html, body{
     .main-container{
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         width: 80%;
         margin-left: 10%;
-        margin-top: 50px;
-        background-color: #222;
+        margin-top: 80px;
         flex-wrap: wrap;
     
         .conect-container{
@@ -254,27 +253,48 @@ html, body{
             justify-content: center;
             flex-direction: column;
             min-width: 70%;
-            background-color: #333;
-    
+
             .conect-type{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 width: 90%;
-                padding: 10px;
+                padding: 0px;
     
-                p{
+                a{
                     color: #e0e0e0;
                     font-size: large;
                     font-weight: 400;
+                    cursor: pointer;
                 }
             }
+                
+            .selection-type{
+                display: flex;
+                align-items: center;
+
+                width: 90%;
+                height: 10px;
+                margin-top: 10px;
+                border-radius: 20px;
+                background-color: #e0e0e0;
+
+                .button-type{
+                    width: 80px;
+                    height: 13px;
+                    border-radius: 20px;
+                    background-color: limegreen;
+                    transition-duration: .8s;
+                }
+            }
+    
     
                 .log-in{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+                    margin-top: 25px;
                     width: 90%;
                     
                     input{
@@ -297,9 +317,12 @@ html, body{
     
         .description-container{
             display: flex;
+            min-width: 20%;
             align-items: center;
             justify-content: center;
-            background-color: #888;
+            text-align: start;
+            color: #e0e0e0;
+            padding: 30px;
         }
     }
 }
