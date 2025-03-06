@@ -175,81 +175,120 @@ html, body{
 
 .home-page{
     display: block;
-    
-    .home-layout-container{
+        
+    .home-container{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         margin-top: 70px;
-        
-        .home-layout-container-text{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            
-            .text-1{
-                color: #eee;
-                font-size: 18px;
-                letter-spacing: 10px;
-                margin-bottom: -5px;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                transition-duration: 1.5s;
-            }
-            
-            .text-2{
-                background-image: linear-gradient(to right, #e0e0e0, #555 );
-                background-clip: text;
-                color: transparent;
-                font-size: 50px;
-                margin-bottom: 0px;
-                font-weight: 600;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-            
-            .text-3 {
-                color: #e0e0e0;
-                font-size: 25px;
-                margin-bottom: 40px;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-            
-            .text-4{
-                background-image: linear-gradient(to right, #e0e0e0, #777 );
-                color: #111;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                text-decoration: none;
-                padding: 5px;
-                border-radius: 30px;
-            }
-            
-            .text-4:hover{
-                transform: scale(1.1);
-                transition-duration: .6s;
-            }
-        }
     }
 }
+    
+.container-text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+        
+    .text-1{
+        color: #eee;
+        font-size: 18px;
+        letter-spacing: 10px;
+        margin-bottom: -5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        transition-duration: 1.5s;
+    }
+    
+    .text-2{
+        background-image: linear-gradient(to right, #e0e0e0, #555 );
+        background-clip: text;
+        color: transparent;
+        font-size: 50px;
+        margin-bottom: 0px;
+        font-weight: 600;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    .text-3 {
+        color: #e0e0e0;
+        font-size: 25px;
+        margin-bottom: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+}
+
+.page-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
+
+    .link-1, .link-2{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #111;
+        width: 160px;
+        padding: 5px;
+        border-radius: 30px;
+        text-decoration: none;
+        text-align: center;
+        background-image: linear-gradient(to right, #e0e0e0, #777 );
+        transition-duration: .8s;
+    }
+
+    .link-1{
+        background-image: linear-gradient(to right, #e0e0e0, #777 );
+    }
+
+    .link-2{
+        background-image: linear-gradient(to left, #e0e0e0, #777);
+    }
+
+    .link-1:hover, .link-2:hover{
+        transform: scale(1.1);
+    }
+}
+
+
 
 
 
 /* TALK PAGE */
 
 .talk-page{
-    display: block;
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
     
     .main-container{
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
         width: 80%;
         margin-left: 10%;
         margin-top: 80px;
         flex-wrap: wrap;
     }
 
+    p{
+        color: #e0e0e0;
+        font-size: large;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
     a{
         color: #e0e0e0;
+        width: 100%;
+        text-decoration: none;
+    }
+
+    input{
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #e0e0e0;
+        border-radius: 10px;
+        font-weight: 600;
     }
 }
     
@@ -258,7 +297,9 @@ html, body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-width: 70%;
+    width: 60%;
+    max-width: 500px;
+    margin-top: 20px;
 
     .conect-type{
         display: flex;
@@ -266,12 +307,6 @@ html, body{
         justify-content: space-between;
         width: 90%;
         padding: 0px;
-
-        a{
-            font-size: large;
-            font-weight: 400;
-            cursor: pointer;
-        }
     }
         
     .selection-bar{
@@ -281,13 +316,13 @@ html, body{
         height: 10px;
         margin-top: 10px;
         border-radius: 20px;
-        background-color: #e0e0e0;
+        background-color: #888;
 
         .selection-type-bar{
-            width: 80px;
-            height: 13px;
+            width: 120px;
+            height: 10px;
             border-radius: 20px;
-            background-color: limegreen;
+            background-color: #eee;
             transition-duration: .8s;
         }
     }
@@ -299,40 +334,15 @@ html, body{
         justify-content: center;
         margin-top: 25px;
         width: 90%;
-        
-        input{
-            width: 100%;
-            height: 40px;
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            font-weight: 600;
-        }
-
-        a{
-            width: 100%;
-            text-decoration: none;
-        }
     }
 
     .sign-in{
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-top: 25px;
         width: 90%;
-
-        input{
-            width: 100%;
-            height: 40px;
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            font-weight: 600;
-        }
     }
 }
     
@@ -341,9 +351,12 @@ html, body{
     min-width: 20%;
     align-items: center;
     justify-content: center;
-    text-align: start;
     color: #e0e0e0;
-    padding: 30px;
+    
+    .description{
+        display: flex;
+        cursor: default;
+    }
 }
 
 
@@ -351,7 +364,7 @@ html, body{
 /* ABOUT PAGE */
 
 .port-page{
-    display: block;
+    display: none;
 
     .habilits, .projects, .about{
         display: flex;
@@ -379,6 +392,7 @@ html, body{
         }
     }
 }
+
 
 .port-about-container{
     display: flex;

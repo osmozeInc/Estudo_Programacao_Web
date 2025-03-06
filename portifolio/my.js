@@ -1,11 +1,13 @@
 
+
+/* BARRA DE OPÇÕES */
+
 const checkbox_bars = document.getElementById('checkbox-bars');
 const home_page = document.getElementById('home-page');
 const port_page = document.getElementById('port-page');
 const talk_page = document.getElementById('talk-page');
 const title_page = document.getElementById('title-page');
 
-/* BARRA DE OPÇÕES */
 
 // animação das opções na barra de opções
 checkbox_bars.addEventListener('change', function() {
@@ -45,75 +47,79 @@ function check_title() {
     else console.log('erro');
 }
 
-// seleção das páginas pelas opções
-document.getElementById('option-1').addEventListener('click', function()
-{
+function create_events() {
     const event = new Event('change');
     checkbox_bars.checked = false;
     checkbox_bars.dispatchEvent(event);
+}
+
+function up_down_title(position){
+    title_page.style.transitionDuration = `1s`;
+    title_page.style.transform = `translateY(${position}px)`;
+}
+
+document.getElementById('option-1').addEventListener('click', function()
+{
+    create_events();
 
     home_page.style.display = 'block';
     port_page.style.display = 'none';
     talk_page.style.display = 'none';
 
-    title_page.style.transform = `translateY(0px)`;
-    title_page.style.transitionDuration = `1s`;
+    up_down_title(0);
 });
 
 document.getElementById('option-2').addEventListener('click', function()
 {
-    const event = new Event('change');
-    checkbox_bars.checked = false;
-    checkbox_bars.dispatchEvent(event);
+    create_events();
 
     home_page.style.display = 'none';
     port_page.style.display = 'block';
     talk_page.style.display = 'none';
 
-    title_page.style.transform = `translateY(-45px)`;
-    title_page.style.transitionDuration = `1s`;
+    up_down_title(-45);
 });
 
 document.getElementById('option-3').addEventListener('click', function()
 {
-    const event = new Event('change');
-    checkbox_bars.checked = false;
-    checkbox_bars.dispatchEvent(event);
+    create_events();
 
     home_page.style.display = 'none';
     port_page.style.display = 'none';
     talk_page.style.display = 'block';
 
-    title_page.style.transform = `translateY(-90px)`;
-    title_page.style.transitionDuration = `1s`;
+    up_down_title(-90);
 });
 
-// seleção das páginas pelos links
-document.querySelectorAll('.portifolio-link').forEach(link => {
-    link.addEventListener('click', function() {
-        const event = new Event('change');
-        checkbox_bars.checked = false;
-        checkbox_bars.dispatchEvent(event);
+document.querySelector('.link-1').addEventListener('click', function() {
+        create_events();
 
         home_page.style.display = 'none';
         port_page.style.display = 'block';
         talk_page.style.display = 'none';
 
-        title_page.style.transform = `translateY(-45px)`;
-        title_page.style.transitionDuration = `1s`;
-    });
+        up_down_title(-45);
+});
+
+document.querySelector('.link-2').addEventListener('click', function() {
+        create_events();
+
+        home_page.style.display = 'none';
+        port_page.style.display = 'none';
+        talk_page.style.display = 'block';
+
+        up_down_title(-90);
 });
 
 
 
 
+/* ICONE DE CONTATOS */
 
 const checkbox_contact = document.getElementById('checkbox-contact');
 const icon_not_animation = document.getElementById(`icon-not-animated`);
 let icon = 1;
 
-
-/* ICONE DE CONTATOS */
 
 // animação da aparição dos icones dos contatos no botão
 function blink_contact() 
@@ -166,36 +172,28 @@ checkbox_contact.addEventListener('change', function() {
 
 
 
-const text_to_change = document.querySelectorAll(`.text-3`);
-let index = -1;
-
-
 /* Animações CSS */
 
-// animação de digitação do .texto-3
+const text_to_change = document.querySelector(`.text-3`);
+let index = 0;
+let texts = ["Dev. Full-Stack", "Desenvolvedor Web", "Programador Python", "Programador C#"];
 
+
+// animação de digitação do .texto-3
 function change_text()
 {
-    index++;
-    if (index > 3) index = 0;
-    let texts = ["Dev. Full-Stack", "Desenvolvedor Web", "Programador Python", "Programador C#"];
+    if (index > 3) 
+        index = 0;
 
-    text_to_change.forEach(element =>
-    {
-        function writing(){
-            element.innerHTML = texts[index];
-            element.classList.add(`text-3-animation-${index}`);	
-        };
+    text_to_change.innerHTML = texts[index];
+    text_to_change.classList.add(`text-3-animation-${index}`);
 
 
-        function reset(){
-            element.classList.remove(`text-3-animation-${index}`);
-            element.innerHTML = "<br>";
-        }
-        
-        writing();
-        setTimeout(reset, 9000);
-    })
+    setTimeout(() => {
+        text_to_change.classList.remove(`text-3-animation-${index}`);
+        text_to_change.innerHTML = "<br>";
+        index++;
+    }, 9000);
 }
 
 
@@ -243,26 +241,16 @@ function filter_items(){
 
 
 
-
-/* Name Section do Portifolio */
-
-function up_name_section(){
-    document.querySelectorAll('.name-section').forEach(name => {
-        name.style.transitionDuration = `1s`;
-        name.style.transform = `translateY(0px)`;
-    })
-}
-
-
+/* BARRA DE LOG-IN E SIGN-IN */
 
 const log_in = document.getElementById(`log-in`);
 const sing_in = document.getElementById(`sign-in`);
 
-const selection_type = document.querySelector(`.selection-type`);
-const button_type = document.querySelector(`.button-type`);
+const selection_type = document.querySelector(`.selection-bar`);
+const button_type = document.querySelector(`.selection-type-bar`);
 
 const log_in_container = document.querySelector(`.log-in`);
-const sing_in_container = document.querySelector(`.sing-in`);
+const sing_in_container = document.querySelector(`.sign-in`);
 
 
 log_in.addEventListener('click', function() {
@@ -273,17 +261,20 @@ log_in.addEventListener('click', function() {
 });
 
 sing_in.addEventListener('click', function() {
-    button_type.style.transform = `translateX(${selection_type.offsetWidth - 80}px)`;
+    button_type.style.transform = `translateX(${selection_type.offsetWidth - 120}px)`;
 
     log_in_container.style.display = `none`;
     sing_in_container.style.display = `flex`;
 });
 
 
+
+
+
+
 check_title();
 blink_contact();
 change_text();
-up_name_section();
 
 setInterval(blink_contact, 3000);
 setInterval(change_text, 10000);
