@@ -255,7 +255,7 @@ html, body{
 /* TALK PAGE */
 
 .talk-page{
-    display: none;
+    display: block;
     font-family: 'Courier New', Courier, monospace;
     
     .main-container{
@@ -334,6 +334,31 @@ html, body{
         justify-content: center;
         margin-top: 25px;
         width: 90%;
+
+        .password-container{
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            
+            .show-password-checkbox{
+                position: absolute;
+                margin-top: 10px;
+                margin-right: 35px;
+                scale: 1.2;
+                
+                .fa-eye{
+                    position: absolute;
+                    cursor: pointer;
+                }
+        
+                .fa-eye-slash{
+                    position: absolute;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
     }
 
     .sign-in{
@@ -356,6 +381,9 @@ html, body{
     .description{
         display: flex;
         cursor: default;
+        font-size: larger;
+        font-weight: 500;
+        letter-spacing: 4px;
     }
 }
 
@@ -364,7 +392,7 @@ html, body{
 /* ABOUT PAGE */
 
 .port-page{
-    display: none;
+    display: block;
 
     .habilits, .projects, .about{
         display: flex;

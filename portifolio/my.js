@@ -199,7 +199,6 @@ function change_text()
 
 
 
-
 /* FILTRO DE PROJETOS */
 
 // função para mudar a cor dos botões de filtro
@@ -265,6 +264,39 @@ sing_in.addEventListener('click', function() {
 
     log_in_container.style.display = `none`;
     sing_in_container.style.display = `flex`;
+});
+
+
+
+
+
+/* VISIBILIDADE DA SENHA */
+
+const hide_password = document.querySelector(`.fa-eye`);
+const checkbox_password = document.querySelector('.show-password-checkbox');
+const password = document.querySelector(`#password`);
+let show = false;
+
+
+// animação da visibilidade da senha
+checkbox_password.addEventListener('click', function() {
+
+    if (!show)
+    {
+        console.log('show')
+        hide_password.classList.remove('fa-eye');
+        hide_password.classList.add('fa-eye-slash');
+        show = true;
+        password.setAttribute('type', 'text');
+    }
+    else
+    {
+        console.log('hide')
+        hide_password.classList.remove('fa-eye-slash');
+        hide_password.classList.add('fa-eye');
+        show = false;
+        password.setAttribute('type', 'password');
+    }
 });
 
 
