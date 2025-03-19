@@ -8,17 +8,31 @@
 
 <div> <!-- imports JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="./portifolio/my.js" type="module"></script>
+    <script src="my.js" type="module"></script>
 </div>
 
 <div>   <!-- imports CSS -->
 
-    <link rel="stylesheet" href="./portifolio/style.css">
-    <link rel="stylesheet" href="./portifolio/animation.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </div>
+
+<?php 
+    $DBservername = "localhost";
+    $DBusername = "root";
+    $DBpassword = "";
+    $DBname = "usuarios";
+
+    $conn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+
+    if ($conn->connect_error) {
+        echo "<script>alert('Erro de conexão ao servidor');</script>";    }
+
+    $conn->close();
+?>
 
 <!-- HTML -->
 <body style="background-color: #111;">
@@ -54,7 +68,6 @@
                         <i id="animation-opacity-icon-3" class="fa-brands fa-linkedin-in fa-xl home-bar-icon"></i>
                         <i id="animation-opacity-icon-4" class="fa-regular fa-envelope fa-xl home-bar-icon"></i>
                         
-
                         <i id="icon-not-animated" class="fa-solid fa-user fa-xl home-bar-icon"></i>
                     </div>
                 </label>
@@ -126,33 +139,45 @@
                     </div>
                 </div>
 
-                <div class="log-in">
-                    <input class="input" type="email" placeholder="E-mail">
-
-                    <div class="password-container">
-                        <input class="input" id="password" type="password" placeholder="Senha">
-
-                        <div class="show-password-checkbox">
-                            <i class="fa-solid fa-eye"></i>
-                        </div>
-                    </div>
+                <form class="log-in" action="" method="post">
+                    <input class="input" id="email-log" name="email-log" type="email" placeholder="E-mail">
+                    <input class="input" id="password-log" name="password-log" type="password" placeholder="Senha" required>
 
                     <a href="" class="a">Esqueci a Senha</a>
-                    
                     <br><br><br><br>
-                </div>
 
-                <div class="sign-in">
-                    <input class="input" type="text" placeholder="Nome">
-                    <input class="input" type="email" placeholder="E-mail">
-                    <input class="input" type="password" placeholder="Senha">
-                    <input class="input" type="password" placeholder="Confirme a Senha">
-                </div>
+                    <input class="button" id="log-in-button" type="submit" value="Entrar">
+                </form>
 
-                <form class="conect-button" action="cad.php">
-                    <input class="button" type="submit">
-                        Enviar
-                    </input>
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        
+                        $email = $_POST['email-log'];
+                        $password = $_POST['password-log'];
+
+                        $conn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+                        $sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param("ss", $email, $password);
+                        $stmt->execute();
+
+                        $result = $stmt->get_result();
+                        
+                        if ($result->num_rows > 0)
+                        {
+                            echo "<script>window.location.href = 'pagina_do_usuario.php';</script>";
+                        }
+                    }
+                ?>
+
+                <form class="sign-in">
+                    <input class="input" id="name-s" type="text" placeholder="Nome" required>
+                    <input class="input" id="email-s" type="email" placeholder="E-mail" required>
+                    <input class="input" id="password-s" type="password" placeholder="Senha" required>
+                    <input class="input" id="confirm-password-s" type="password" placeholder="Confirme a Senha" required>
+
+                    <input class="button" type="submit" value="Criar Conta">
                 </form>
 
             </div>

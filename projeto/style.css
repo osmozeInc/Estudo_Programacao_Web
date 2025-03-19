@@ -294,10 +294,15 @@ html, body{
     .button{
         color: #e0e0e0;
         background-color: #212121;
-        width: 120px;
+        width: 200px;
         height: 40px;
         border-radius: 15px;
         border: #e0e0e0 solid 2px;
+    }
+
+    .button:hover{
+        background-color: #e0e0e0;
+        color: #212121;
     }
 }
     

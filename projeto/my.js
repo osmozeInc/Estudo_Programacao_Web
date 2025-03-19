@@ -270,36 +270,25 @@ sing_in.addEventListener('click', function() {
 
 
 
-/* VISIBILIDADE DA SENHA */
+/* ENVIO DE FORMULARIO */
 
-const hide_password = document.querySelector(`.fa-eye`);
-const checkbox_password = document.querySelector('.show-password-checkbox');
-const password = document.querySelector(`#password`);
-let show = false;
+const submit_log = document.getElementById("log-in-button");
 
-
-// animação da visibilidade da senha
-checkbox_password.addEventListener('click', function() {
-
-    if (!show)
-    {
-        console.log('show')
-        hide_password.classList.remove('fa-eye');
-        hide_password.classList.add('fa-eye-slash');
-        show = true;
-        password.setAttribute('type', 'text');
+submit_log.addEventListener("click", function(event) {
+    const email = document.getElementById("email-log");
+    const password = document.getElementById("password-log");
+    
+    if (email.value === "" || password.value === "") {
+        email.placeholder = "Digite um e-mail";
+        password.placeholder = "Digite uma senha";
+        event.preventDefault();
     }
-    else
-    {
-        console.log('hide')
-        hide_password.classList.remove('fa-eye-slash');
-        hide_password.classList.add('fa-eye');
-        show = false;
-        password.setAttribute('type', 'password');
+    if (password.value.length < 4 || password.value.length > 8) {
+        alert("A senha deve ter entre 4 e 8 caracteres.");
+        event.preventDefault();
     }
+
 });
-
-
 
 
 
