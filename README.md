@@ -6,6 +6,14 @@ Este repositório é dedicado ao estudo das linguagens voltadas para o desenvolv
 
 O objetivo deste repositório é estudar os conceitos fundamentais e avançados para a programação web, incluindo a interação com o front-end e back-end, como criação de páginas dinâmicas, comunicação com bancos de dados e manipulação de dados no lado do cliente.
 
+## Estrutura do Repositório
+
+- **`CSS/`**: Conceitos e exemplos de uso da linguagem CSS.
+- **`HTML/`**: Introdução a programação Web, organização de elementos html e conceitos essenciais.
+- **`JavaScript/`**: Exemplos e anotações sobre os conceitos fundamentais da linguagem JavaScript.
+- **`PHP/`**: Exemplos e anotações sobre os conceitos fundamentais da linguagem PHP.
+- **`site_pessoal/`**: Projetos completos para aplicar o que foi aprendido em C#.
+
 ## Como Usar
 
 1. Clone este repositório:
