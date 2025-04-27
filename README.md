@@ -19,7 +19,7 @@ O objetivo deste repositório é estudar os conceitos fundamentais e avançados 
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/estudo-php-js-web.git
+   git clone https://github.com/osmozeInc/Estudo_Programacao_Web.git
 
 2. Para os exemplos de PHP:
 - Certifique-se de ter um servidor local como o XAMPP ou MAMP instalado.
