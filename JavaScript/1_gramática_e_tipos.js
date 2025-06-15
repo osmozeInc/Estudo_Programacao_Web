@@ -30,7 +30,7 @@ ex_1 = "37" + 7; // "377"
 ex_1 = 37 + 7; // 44
 
 ex_1 = "1.1" + "1.1"; // "1.11.1"
-ex_1 = +"1.1" + +"1.1"; // 2.2
+ex_1 = +"1.1" + + "1.1"; // 2.2
 
 
 
@@ -71,11 +71,9 @@ var terra = { pais: { 1: "Brasil", b: "Chile" }, estado: "Ceará"};
 // console.log(terra.pais[1]);
 // console.log(terra.pais.b);
 
-console.log("hello world!\n\
-olá mundo!");
 
-
-
+// Date
+var data = new Date();
 
 
 
