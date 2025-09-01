@@ -6,163 +6,208 @@
     <title>Caio Monte</title>
 </head>
 
-<!-- imports CSS -->
-<div>   
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div> <!-- imports JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="my.js" type="module"></script>
 </div>
 
+<div>   <!-- imports CSS -->
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</div>
+
+<?php 
+    $DBservername = "localhost";
+    $DBusername = "root";
+    $DBpassword = "";
+    $DBname = "usuarios";
+
+    $conn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+
+    if ($conn->connect_error) {
+        echo "<script>alert('Erro de conexão ao servidor');</script>";    }
+
+    $conn->close();
+?>
+
 <!-- HTML -->
-<body>
+<body style="background-color: #111;">
 
     <!-- barra de navegação -->
-    <div class="navbar"> 
-        <div class="navbar-left">
-            <img src="images/navbar_logo.png" alt="" class="navbar-logo">
+    <div class="home-bar"> 
+
+        <div class="col home-bar-left-side"> <!-- barras de conteudos da página -->
+            <input type="checkbox" id="checkbox-bars">
+                <label class="home-bar-bars-toggle" for="checkbox-bars">
+                    <div id="bar-1" class="home-bar-bars"></div>
+                    <div id="bar-2" class="home-bar-bars"></div>
+                    <div id="bar-3" class="home-bar-bars"></div>
+                </label>
+            </input>
+            <a id="option-1" class="home-bar-bars-options" href="#">Início</a>
+            <a id="option-2" class="home-bar-bars-options" href="#">Portifólio</a>
+            <a id="option-3" class="home-bar-bars-options" href="#">Vamos Conversar</a>
         </div>
-    
-        <div class="navbar-right">
-            <a class="link" href="#">Início</a>
-            <a class="link" href="#">Portifólio</a>
-            <a class="link" href="#">Nossos serviços</a>
-            <a class="link" href="#">Capitão da nave</a>
-        </div>
-    </div>
         
+        <div class="home-bar-middle-side"> <!-- titulo da pagina-->
+            <p id="title-page" class="home-bar-title-page">Início<br>Portifólio<br>Vamos Conversar</p>
+        </div>
+        
+        <div class="col home-bar-right-side"> <!-- icone de contatos -->
+
+            <input type="checkbox" id="checkbox-contact">
+                <label for="checkbox-contact">
+                    <div class="home-bar-circle-profile">
+
+                        <i id="animation-opacity-icon-1" class="fa-solid fa-code fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-2" class="fa-brands fa-instagram fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-3" class="fa-brands fa-linkedin-in fa-xl home-bar-icon"></i>
+                        <i id="animation-opacity-icon-4" class="fa-regular fa-envelope fa-xl home-bar-icon"></i>
+                        
+                        <i id="icon-not-animated" class="fa-solid fa-user fa-xl home-bar-icon"></i>
+                    </div>
+                </label>
+            </input>
+        </div>
+
+    </div>
+
+
     <!-- contatos -->
-    <div class="contacts-container">
-        <a id="contact-1" class="contacts" href="https://github.com/osmozeInc" target="_blank">
-            <div class="text-content">
-                <p id="contact-text-1" class="contact-text">osmozeInc</p>
-            </div>
-            <i class="fa-brands fa-github fa-xl contact-content"></i>
-        </a>
-        <a id="contact-2" class="contacts" href="https://www.instagram.com/caiomonte.py/" target="_blank">
-            <div class="text-content">
-                <p id="contact-text-2" class="contact-text">caiomonte.py</p>
-            </div>    
-            <i class="fa-brands fa-instagram fa-xl contact-content"></i>
-        </a>
-        <a id="contact-3" class="contacts" href="https://www.linkedin.com/in/dev-caiomonte/" target="_blank">
-            <div class="text-content">
-                <p id="contact-text-3" class="contact-text">dev-caiomonte</p>
-            </div>  
-            <i class="fa-brands fa-linkedin fa-xl contact-content"></i>
-        </a>
-        <a id="contact-4" class="contacts" href="mailto:caiomm076@gmail.com" target="_blank">
-            <div class="text-content">
-                <p id="contact-text-4" class="contact-text">Email</p>
-            </div>  
-            <i class="fa-solid fa-envelope fa-xl contact-content"></i>
-        </a>
-    </div>
-  
-    <!-- icone de contatos -->
-    <div class="contact-circle">
-        <i id="blink-icon-0" class="icon fa-solid fa-user"></i>
-        <i id="blink-icon-1" class="icon fa-solid fa-code"></i>
-        <i id="blink-icon-2" class="icon fa-brands fa-instagram"></i>
-        <i id="blink-icon-3" class="icon fa-brands fa-linkedin-in"></i>
-        <i id="blink-icon-4" class="icon fa-regular fa-envelope"></i>
-    </div>
-    
-    
-
-
-    <div class="main-section">
-
-        <!-- seção lateral principal -->
-        <div id="main-section-left" class="main-section-left">
+    <div class="d-flex justify-content-end">
+        <div class="home-contacts-container">
+            <a id="contact-1" class="home-bar-contacts" href="https://github.com/osmozeInc" target="_blank">
+                osmozeInc
+                <i class="fa-brands fa-github fa-xl contact-content"></i>
+            </a>
+            <a id="contact-2" class="home-bar-contacts" href="https://www.instagram.com/caiomonte.py/" target="_blank">
+                caiomonte.py
+                <i class="fa-brands fa-instagram fa-xl contact-content"></i>
+            </a>
+            <a id="contact-3" class="home-bar-contacts" href="https://www.linkedin.com/in/dev-caiomonte/" target="_blank">
+                dev-caiomonte
+                <i class="fa-brands fa-linkedin fa-xl contact-content"></i>
+            </a>
+            <a id="contact-4" class="home-bar-contacts" href="mailto:caiomm076@gmail.com" target="_blank">
+                E-mail
+                <i class="fa-solid fa-envelope fa-xl contact-content"></i>
+            </a>
         </div>
-        
-        
-        <!-- seção de login -->
-        <div id="talk-page" class="login-section">
-            <h1 class="login-title">Acesse nossos serviços</h1>
-            <p class="login-subtitle">Crie uma conta ou entre para usar os serviços</p>
+    </div>
+
+
+    <!-- pagina inicial -->
+    <div id="home-page" class="home-page">
+        <div class="home-container">
+            <div class="container-text">
+                <p class="text-1">Hello World!</p>
+                <p class="text-2">Caio Monte</p>
+                <div>
+                    <p class="text-3"></p>
+                </div>
+                <div class="page-links">
+                    <a href="#" class="link-1">Conheça meu trabalho</a>
+                    <a href="#" class="link-2">Entre em contato</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- vamos conversar -->
+    <div id="talk-page" class="talk-page">
+        <div class="main-container">
+            <div class="description-container">
+                <p class="description">
+                    Entre em contato
+                </p>
+            </div>
+
+            <div class="conect-container">
                 
-            <div class="login-container">
                 <div class="conect-type">
                     <p class="p" id="log-in">Entrar</p>
                     <p class="p" id="sign-in">Criar Conta</p>
                 </div>
-                
+
                 <div class="selection-bar">
                     <div class="selection-type-bar">
                     </div>
                 </div>
-                    
+
                 <form class="log-in" action="" method="post">
-                    <input class="input" id="email-log" name="name-log" id="name-log" type="text" placeholder="E-mail" required>
-                    <input class="input" id="password-log" name="password-log" id="password-log" type="password" placeholder="Senha" required>
-                    
+                    <input class="input" id="email-log" name="email-log" type="email" placeholder="E-mail">
+                    <input class="input" id="password-log" name="password-log" type="password" placeholder="Senha" required>
+
                     <a href="" class="a">Esqueci a Senha</a>
                     <br><br><br><br>
-                    
-                    <input class="button" id="login-button" type="submit" value="Entrar">
+
+                    <input class="button" id="log-in-button" type="submit" value="Entrar">
                 </form>
+
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        
+                        $email = $_POST['email-log'];
+                        $password = $_POST['password-log'];
+
+                        $conn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+                        $sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param("ss", $email, $password);
+                        $stmt->execute();
+
+                        $result = $stmt->get_result();
+                        
+                        if ($result->num_rows > 0)
+                        {
+                            echo "<script>window.location.href = 'pagina_do_usuario.php';</script>";
+                        }
+                    }
+                ?>
 
                 <form class="sign-in">
                     <input class="input" id="name-s" type="text" placeholder="Nome" required>
                     <input class="input" id="email-s" type="email" placeholder="E-mail" required>
                     <input class="input" id="password-s" type="password" placeholder="Senha" required>
                     <input class="input" id="confirm-password-s" type="password" placeholder="Confirme a Senha" required>
-                    
+
                     <input class="button" type="submit" value="Criar Conta">
                 </form>
+
             </div>
         </div>
     </div>
 
 
     <!-- portifolio -->
-    <!--
     <div id="port-page" class="port-page">
 
-        <!-- sobre mim --
+        <!-- sobre mim -->
         <div class="about">
             <div class="name-section">
-                <p class="name">Sobre o Site</p>
+                <p>Sobre mim</p>
             </div>
 
-            <div class="port-about-container">                 
+            <div class="port-about-container"> 
                 <div class="port-about-card">
-
-                    <div style="margin-top: -15px;">
-                        <p class="port-about-title">Se conecte</p>
-                    </div>
+                    <div style="margin-top: -15px;"><p class="port-about-title">Sobre mim</p></div>
     
-                    <p class="port-about-text">
-                        entre para usar os serviços e projetos do desenvolvedor, como:
-                        <ul class="port-about-text">
-                            <li>Agenda de faculdade e Rotina</li>
-                        </ul>
-                    </p>
-                    
-                </div>
-
-                <br><br>
-                
-                <div class="port-about-card">
-
-                    <div style="margin-top: -15px;">
-                        <p class="port-about-title">Objetivo</p>
-                    </div>
-    
-                    <p class="port-about-text">
-                        Este site foi criado com o propósito de servir como portifolio para o desenvolvedor, apresentando um resumo de seus projetos, e disponibilizando alguns serviços ao fazer log-in.
-                    </p>
-                    
+                    <p class="port-about-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, atque nobis? Aliquam nihil vitae illo quidem! Quo, incidunt ex fuga impedit, nobis odio magni obcaecati iste, porro aliquam quibusdam ab.</p>
                 </div>
             </div>
         </div>
 
-        <!-- habilidades --
+        <!-- habilidades -->
         <div class="habilits">
 
             <div class="name-section">
-                <p class="name">Habilidades</p>
+                <p>Habilidades</p>
             </div>
 
             <div class="port-habilits-container">
@@ -191,10 +236,10 @@
             </div>
         </div>
 
-        <!-- projetos --
+        <!-- projetos -->
         <div class="projects">
             <div class="name-section">
-                <p class="name">Projetos</p>
+                <p>Projetos</p>
             </div>
 
             <div class="port-projects-container">
@@ -230,14 +275,8 @@
         </div>
         
     </div>
-    -->
+
+
 
 </body>
-
-<!-- imports JavaScript -->
-<div> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="my.js?v=<?php echo time(); ?>" type="module"></script>
-</div>
-
 </html>

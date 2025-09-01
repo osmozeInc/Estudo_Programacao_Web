@@ -1,0 +1,142 @@
+.text-3-animation-0 {
+    overflow: hidden;
+    border-right: 3px solid white;
+    white-space: nowrap;
+
+    animation: 
+        typing-0 4s steps(20) 0s 1 normal forwards,
+        blink-0 .75s linear 4s 3,
+        delete-0 2.5s steps(20) 6.5s 1 normal forwards;
+}
+
+@keyframes typing-0{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes blink-0{
+    100%{
+        border-color: transparent;
+    }
+}
+
+@keyframes delete-0{
+    from{
+        width: 60%;
+    }
+    to{
+        width: 0%;
+    }
+}
+
+
+.text-3-animation-1 {
+    overflow: hidden;
+    border-right: 3px solid white;
+    white-space: nowrap;
+
+    animation: 
+        typing-1 4s steps(20) 0s 1 normal forwards,
+        blink-1 .75s linear 4s 3,
+        delete-1 2.5s steps(20) 6.5s 1 normal forwards;
+}
+
+@keyframes typing-1{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 77%;
+    }
+}
+
+@keyframes blink-1{
+    100%{
+        border-color: transparent;
+    }
+}
+
+@keyframes delete-1{
+    from{
+        width: 77%;
+    }
+    to{
+        width: 0%;
+    }
+}
+
+
+.text-3-animation-2 {
+    overflow: hidden;
+    border-right: 3px solid white;
+    white-space: nowrap;
+
+    animation: 
+        typing-2 4s steps(20) 0s 1 normal forwards,
+        blink-2 .75s linear 4s 3,
+        delete-2 2.5s steps(20) 6.5s 1 normal forwards;
+}
+
+@keyframes typing-2{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 80%;
+    }
+}
+
+@keyframes blink-2{
+    100%{
+        border-color: transparent;
+    }
+}
+
+@keyframes delete-2{
+    from{
+        width: 75%;
+    }
+    to{
+        width: 0%;
+    }
+}
+
+
+.text-3-animation-3 {
+    overflow: hidden;
+    border-right: 3px solid white;
+    white-space: nowrap;
+
+    animation: 
+        typing-3 4s steps(18) 0s 1 normal forwards,
+        blink-3 .75s linear 4s 3,
+        delete-3 2.5s steps(18) 6.5s 1 normal forwards;
+}
+
+@keyframes typing-3{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 65%;
+    }
+}
+
+@keyframes blink-3{
+    100%{
+        border-color: transparent;
+    }
+}
+
+@keyframes delete-3{
+    from{
+        width: 65%;
+    }
+    to{
+        width: 0%;
+    }
+}
